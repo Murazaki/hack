@@ -1,0 +1,5 @@
+#!/bin/bash
+. .var
+
+curl --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" -sS \
+  https://${MASTODON_SERVER}/api/v1/domain_blocks?limit=100
