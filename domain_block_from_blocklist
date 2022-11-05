@@ -1,0 +1,7 @@
+#!/bin/bash
+. .var
+
+while read d; do
+  echo "Blocking: $d"
+  ./domain_block $d
+done <blocklist
