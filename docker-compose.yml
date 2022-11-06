@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  hack:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/local/bin
+    command: domain_block_from_blocklist

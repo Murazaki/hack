@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 . .var
 
 curl --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" -sS \
