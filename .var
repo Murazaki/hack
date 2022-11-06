@@ -1,20 +1,8 @@
-#!/bin/bash
-
-if [ -z $MASTODON_USER ]; then
-  echo "MASTODON_USER is empty."
-  echo "Set MASTODON_USER, MASTODON_SERVER, MASTODON_PASS!"
-  exit 1
-fi
-
-if [ -z $MASTODON_PASS ]; then
-  echo "MASTODON_PASS is empty."
-  echo "Set MASTODON_USER, MASTODON_SERVER, MASTODON_PASS!"
-  exit 1
-fi
+#!/bin/sh
 
 if [ -z $MASTODON_SERVER ]; then
   echo "MASTODON_SERVER is empty."
-  echo "Set MASTODON_USER, MASTODON_SERVER, MASTODON_PASS!"
+  echo "Set MASTODON_SERVER!"
   exit 1
 fi
 

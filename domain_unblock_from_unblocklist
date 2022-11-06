@@ -4,6 +4,6 @@
 BASEDIR=$(dirname "$0")
 
 while IFS= read -r d || [ -n "$d" ]; do
-  echo "Blocking: $d"
-  $BASEDIR/domain_block $d
-done < $BASEDIR/blocklist
+  echo "Unblocking: $d"
+  $BASEDIR/domain_unblock $d
+done < $BASEDIR/unblocklist
