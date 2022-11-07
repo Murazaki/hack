@@ -1,5 +1,4 @@
-#!/bin/sh
-. .var
+#!/usr/bin/env shsh _var.sh
 
 curl --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" -sS \
   https://${MASTODON_SERVER}/api/v1/timelines/home

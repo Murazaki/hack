@@ -1,5 +1,5 @@
-#!/bin/sh
-. .var
+#!/usr/bin/env sh
+sh _var.sh
 
 # Attempt to get the token from oauth authorize/token scheme
 # Difficult to get the redirection to work in CLI, might as well get it from settings for now
