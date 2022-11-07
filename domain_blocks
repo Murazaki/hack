@@ -1,5 +1,5 @@
-#!/bin/sh
-. .var
+#!/usr/bin/env sh
+sh _var.sh
 
 curl --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" -sS \
   https://${MASTODON_SERVER}/api/v1/domain_blocks

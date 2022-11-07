@@ -1,5 +1,5 @@
-#!/bin/sh
-. .var
+#!/usr/bin/env sh
+sh _var.sh
 
 
 if [ -z $1 ]; then
