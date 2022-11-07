@@ -1,6 +1,6 @@
 # Hack
 
-Hacks for Mastodon. 
+Hacks for Mastodon. We suggest using [tootctl](https://www.google.com/search?q=tootctl&oq=tootctl&aqs=chrome..69i57j69i59j69i60.1285j0j1&sourceid=chrome&ie=UTF-8) whenever possible.
 
 Here are global variables you should set to interact with the API.
 
@@ -12,9 +12,7 @@ You will need to [generate a client key and secret](https://docs.joinmastodon.or
 You should also be able to get an access token from your settings, but you can also get it from the OAuth authorize and token scheme.
 
 ```bash
-MASTODON_CLIENT_KEY="123"
-MASTODON_CLIENT_SECRET="abc"
-MASTODON_ACCESS_TOKEN="def"
+MASTODON_ACCESS_TOKEN="abc123def"
 ```
 
 Then you can run the scripts!
