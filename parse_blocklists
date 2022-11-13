@@ -10,12 +10,16 @@ fi
 offending_terms="$1"
 empty_reason="$2"
 
-if [ ${#empty_reason} -ne 0 ]; then
-  while IFS= read -r regex || [ -n "$regex" ]; do
-    jq -r ".[] | if .comment | length == 0 or test(\"${regex}\"; \"i\") then .domain else empty end" $BASEDIR/trusted_blocklists/*.json
-  done < "${offending_terms}" | sort -u
+if [ -s ${offending_terms} ]; then
+    if [ ${#empty_reason} -ne 0 ]; then
+    while IFS= read -r regex || [ -n "$regex" ]; do
+        jq -r ".[] | if .comment | length == 0 or test(\"${regex}\"; \"i\") then .domain else empty end" $BASEDIR/trusted_blocklists/*.json
+    done < "${offending_terms}" | sort -u
+    else
+    while IFS= read -r regex || [ -n "$regex" ]; do
+        jq -r ".[] | if .comment | length != 0 and test(\"${regex}\"; \"i\") then .domain else empty end" $BASEDIR/trusted_blocklists/*.json
+    done < "${offending_terms}" | sort -u
+    fi
 else
-  while IFS= read -r regex || [ -n "$regex" ]; do
-    jq -r ".[] | if .comment | length != 0 and test(\"${regex}\"; \"i\") then .domain else empty end" $BASEDIR/trusted_blocklists/*.json
-  done < "${offending_terms}" | sort -u
+    jq -r '.[] | .domain' $BASEDIR/trusted_blocklists/*.json | sort -u
 fi
