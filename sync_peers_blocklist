@@ -12,4 +12,4 @@ while IFS= read -r d || [ -n "$d" ]; do
   $BASEDIR/retrieve_blocklist $d
 done < $BASEDIR/trusted_peers
 
-parse_blocklists block_reasons > $BASEDIR/blocklist
+$BASEDIR/parse_blocklists offending_terms > $BASEDIR/blocklist
