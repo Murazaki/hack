@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+BASEDIR=$(dirname "$0")
+
+if [ -z $1 ]; then
+  echo "Missing argument. retrieve_blocklist <domain>"
+  exit 1
+fi
+trusted_peer="$1"
+
+curl --header "Accept: application/json" -sS \
+  https://$trusted_peer/api/v1/instance/domain_blocks \
+  | jq 'if keys[0] | type == "number" then . else empty end' \
+  > "$BASEDIR/trusted_blocklists/${trusted_peer}.json"
