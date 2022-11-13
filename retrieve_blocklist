@@ -10,5 +10,4 @@ trusted_peer="$1"
 
 curl --header "Accept: application/json" -sS \
   https://$trusted_peer/api/v1/instance/domain_blocks \
-  | jq 'if keys[0] | type == "number" then . else empty end' \
-  > "$BASEDIR/trusted_blocklists/${trusted_peer}.json"
+  | jq 'if keys[0] | type == "number" then . else empty end'
