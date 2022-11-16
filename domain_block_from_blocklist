@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
-sh _var.sh
-
 BASEDIR=$(dirname "$0")
 
 while IFS= read -r d || [ -n "$d" ]; do

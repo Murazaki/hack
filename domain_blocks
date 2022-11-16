@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
-sh _var.sh
+BASEDIR=$(dirname "$0")
 
-curl --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" -sS \
+sh $BASEDIR/_var.sh
+
+curl \
+  -w "\n" \
+  --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" -sS \
   https://${MASTODON_SERVER}/api/v1/domain_blocks

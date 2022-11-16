@@ -5,6 +5,7 @@ sh _var.sh
 # Difficult to get the redirection to work in CLI, might as well get it from settings for now
 
 authorization_code=curl \
+  -w "\n" \
   -X GET \
   -d "response_type=code" \
   -d "client_id=${MASTODON_CLIENT_KEY}" \
@@ -17,6 +18,7 @@ authorization_code=curl \
 # /TODO push user credentials to website then get returned authorization_code (next command needs to be updated accordingly)
 
 MASTODON_ACCESS_TOKEN=curl \
+  -w "\n" \
   -X POST \
   -d "grant_type=code" \
   -d "client_id=${MASTODON_CLIENT_KEY}" \

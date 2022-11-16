@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
-sh _var.sh
+BASEDIR=$(dirname "$0")
+
+sh $BASEDIR/_var.sh
 
 if [ -z $1 ]; then
   echo "Missing argument. domain_block <domain>"
@@ -8,6 +10,7 @@ fi
 DOMAIN=$1
 
 curl \
+  -w "\n" \
   -X POST \
   -d "domain=${DOMAIN}" \
   --header "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" \

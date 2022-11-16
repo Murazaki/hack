@@ -20,9 +20,12 @@ Then you can run the scripts!
 A docker compose file makes it handy for you to run it scoped without modifying your environment :
 
 ```bash
-# Run the complete blocklist
+# Update server blocklist and unblocklist
 docker compose up
-# or 
+# or
+domain_update_from_blocklists
+
+# Unblock the complete unblocklist 
 docker compose run hack domain_block_from_blocklist
 
 # Block a specific domain
