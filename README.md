@@ -34,6 +34,16 @@ docker compose run hack domain_block <domain>
 # Unblock the complete unblocklist
 docker compose run hack domain_unblock_from_unblocklist
 
-# Unblock a specific domain
-docker compose run hack domain_unblock <domain>
+# Retrieve blocklist from a instance
+docker compose run hack retrieve_blocklist <domain>
+
+# Parse the blocking comments from retrieved blocklists and extracts
+# domains based on a list of offending terms. The terms can be regex
+# and are case insensitive. The default behaviour is to just add everything.
+docker compose run hack parse_blocklists list_of_offending_terms [also_block_domains_without_comment]
+
+# Retrieve the blocklists from all trusted peers and updates the
+# blocklist. Only trusted peers (not necessarelly the all the unblocked)
+# are synced.
+docker compose run hack sync_peers_blocklist
 ```

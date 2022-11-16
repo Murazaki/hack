@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+sh _var.sh
+
+BASEDIR=$(dirname "$0")
+
+if [ ! -d trusted_blocklists ]; then
+  mkdir -p $BASEDIR/trusted_blocklists
+fi
+
+while IFS= read -r d || [ -n "$d" ]; do
+  echo "Retrieving blocklist from $d"
+  $BASEDIR/retrieve_blocklist $d > "$BASEDIR/trusted_blocklists/$d.json"
+done < $BASEDIR/trusted_peers
+
+$BASEDIR/parse_blocklists offending_terms | cat blocklist - | sort -u > $BASEDIR/blocklist
