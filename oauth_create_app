@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Attempt to create an app which will return an oauth client_id and secret
+
+curl \
+  -X POST \
+  -d "client_name=${MASTODON_CLIENT_NAME}" \
+  -d "redirect_uris=urn:ietf:wg:oauth:2.0:oob" \
+  -d "scope=read write follow admin:read admin:write" \
+  -sSL \
+  https://${MASTODON_SERVER}/api/v1/apps
