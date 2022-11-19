@@ -2,9 +2,15 @@
 
 # Attempt to create an app which will return an oauth client_id and secret
 
+if [ -z $1 ]; then
+  echo "Missing argument. oath_create_app <client_name>"
+  exit 1
+fi
+CLIENT_NAME=$1
+
 curl \
   -X POST \
-  -d "client_name=${MASTODON_CLIENT_NAME}" \
+  -d "client_name=${CLIENT_NAME}" \
   -d "redirect_uris=urn:ietf:wg:oauth:2.0:oob" \
   -d "scope=read write follow admin:read admin:write" \
   -sSL \
