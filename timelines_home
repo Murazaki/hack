@@ -1,4 +1,6 @@
-#!/usr/bin/env shsh _var.sh
+#!/usr/bin/env sh
+
+sh _var.sh
 
 curl \
   -w "\n" \
