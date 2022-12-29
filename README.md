@@ -5,7 +5,7 @@ Hacks for Mastodon. We suggest using [tootctl](https://www.google.com/search?q=t
 Here are global variables you should set to interact with the API.
 
 ```bash
-MASTODON_SERVER="hachyderm.io"
+MASTODON_SERVER="your-server.com"
 ```
 
 You will need to [generate a client key and secret](https://docs.joinmastodon.org/spec/oauth/) you can just do this by creating a new application in your settings.

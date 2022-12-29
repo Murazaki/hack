@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 BASEDIR=$(dirname "$0")
 
-sh $BASEDIR/_var.sh
+sh $BASEDIR/_var
 
 curl \
   -w "\n" \

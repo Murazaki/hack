@@ -6,5 +6,6 @@ services:
     env_file:
       - .env
     volumes:
-      - ./:/usr/local/bin
+      - ./bin:/opt/bin
+      - ./data:/opt/data
     command: domain_update_from_blocklists

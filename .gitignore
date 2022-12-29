@@ -1,3 +1,2 @@
-trusted_blocklists/*
-.idea
+data/trusted_blocklists/*
 .env
