@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-sh _var.sh
+sh _var
 
 curl \
   -w "\n" \
